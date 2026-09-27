@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhrivya Dentistry | Dental Care in Kalaburagi</title>
+    <meta name="description" content="Explore dental treatments, clinic photos and location at Dhrivya Dentistry in Kalaburagi. Request an appointment on WhatsApp.">
+    <meta property="og:title" content="Dhrivya Dentistry | Dental Care in Kalaburagi">
+    <meta property="og:description" content="Thoughtful dental care in Kalaburagi. Explore the clinic and request an appointment.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0f766e;
+            --primary-dark: #115e59;
+            --secondary: #1e3a8a;
+            --accent: #14b8a6;
+            --bg-light: #f0fdfa;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; color: var(--text-dark); background-color: var(--white); line-height: 1.6; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* NAVIGATION */
+        .navbar { position: fixed; top: 0; width: 100%; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 15px 0; transition: all 0.3s ease; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--secondary); display: flex; align-items: center; gap: 8px; }
+        .logo i { color: var(--primary); }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { font-weight: 500; font-size: 0.95rem; color: var(--text-dark); transition: color 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+        .nav-links a.btn-primary { color: var(--white); }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 50px; font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: all 0.3s ease; border: none; text-align: center; }
+        .btn-primary { background: var(--primary); color: var(--white); box-shadow: 0 4px 15px rgba(15, 118, 110, 0.3); }
+        .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(15, 118, 110, 0.4); }
+        .btn-outline { border: 2px solid var(--white); color: var(--white); background: transparent; }
+        .btn-outline:hover { background: var(--white); color: var(--primary); }
+        .hamburger { display: none; font-size: 1.5rem; cursor: pointer; color: var(--secondary); }
+
+        /* HERO */
+        .hero { padding: 160px 0 100px; background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%); position: relative; overflow: hidden; color: var(--white); }
+        .hero::after { content: ''; position: absolute; bottom: -50px; right: -50px; width: 400px; height: 400px; background: rgba(255,255,255,0.05); border-radius: 50%; }
+        .hero-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .hero-text h1 { font-size: 3.2rem; font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
+        .hero-text h1 span { color: #99f6e4; }
+        .hero-text p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; max-width: 500px; }
+        .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+        .hero-image img { width: 100%; border-radius: var(--radius); box-shadow: 0 20px 40px rgba(0,0,0,0.2); object-fit: cover; height: 450px; }
+
+        /* SECTIONS */
+        section { padding: 90px 0; }
+        .section-header { text-align: center; max-width: 700px; margin: 0 auto 60px; }
+        .section-header h2 { font-size: 2.2rem; color: var(--secondary); margin-bottom: 15px; font-weight: 700; }
+        .section-header p { color: var(--text-muted); font-size: 1.05rem; }
+        .highlight { color: var(--primary); }
+
+        /* SERVICES */
+        .services-grid { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .service-card { background: var(--white); border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 35px 25px; text-align: center; transition: all 0.3s ease; }
+        .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--primary); }
+        .service-icon { width: 65px; height: 65px; background: var(--bg-light); color: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 auto 20px; }
+        .service-card h3 { font-size: 1.2rem; margin-bottom: 12px; color: var(--secondary); }
+        .service-card p { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* WHY CHOOSE US */
+        .why-us { background-color: var(--bg-light); }
+        .why-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .why-image img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); height: 400px; object-fit: cover; }
+        .why-text h2 { font-size: 2.2rem; color: var(--secondary); margin-bottom: 20px; }
+        .why-list { display: flex; flex-direction: column; gap: 20px; }
+        .why-item { display: flex; gap: 15px; align-items: flex-start; }
+        .why-item i { color: var(--primary); font-size: 1.3rem; margin-top: 4px; }
+        .why-item h4 { font-size: 1.05rem; color: var(--secondary); margin-bottom: 4px; }
+        .why-item p { font-size: 0.9rem; color: var(--text-muted); }
+
+        /* DOCTORS */
+        .doctors-grid { max-width: 900px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .doctor-card { text-align: center; background: var(--white); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow); }
+        .doctor-card h3 { color: var(--secondary); margin-bottom: 5px; }
+        .doctor-card .specialty { color: var(--primary); font-weight: 600; font-size: 0.9rem; margin-bottom: 15px; }
+        .doctor-card p { color: var(--text-muted); font-size: 0.9rem; }
+
+        /* GALLERY */
+        .gallery-grid { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        .gallery-grid img { width: 100%; height: 250px; object-fit: cover; border-radius: var(--radius); transition: transform 0.3s ease; cursor: pointer; }
+        .gallery-grid img:hover { transform: scale(1.03); }
+        .gallery-grid .large { grid-column: span 2; grid-row: span 2; height: 515px; }
+
+        /* CONTACT */
+        .contact { background: var(--secondary); color: var(--white); }
+        .contact-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+        .contact-info h2 { font-size: 2.2rem; margin-bottom: 20px; }
+        .contact-info p { opacity: 0.8; margin-bottom: 30px; }
+        .contact-details { display: flex; flex-direction: column; gap: 20px; margin-bottom: 30px; }
+        .contact-item { display: flex; gap: 15px; align-items: flex-start; }
+        .contact-item i { color: #99f6e4; font-size: 1.3rem; margin-top: 4px; }
+        .contact-item h4 { font-size: 1rem; margin-bottom: 3px; }
+        .contact-item p { font-size: 0.9rem; opacity: 0.8; margin-bottom: 0; }
+        .contact-form { background: var(--white); padding: 40px; border-radius: var(--radius); color: var(--text-dark); }
+        .contact-form h3 { margin-bottom: 20px; color: var(--secondary); }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: 500; margin-bottom: 5px; color: var(--text-muted); }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px 15px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; font-size: 0.95rem; outline: none; transition: border-color 0.3s; }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1); }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .contact-form .btn { width: 100%; margin-top: 10px; }
+
+        /* FOOTER */
+        footer { background: #0f172a; color: var(--white); text-align: center; padding: 30px 20px; font-size: 0.9rem; }
+        footer span { color: #99f6e4; }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .hero-container, .why-container, .contact-container { grid-template-columns: 1fr; gap: 40px; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .hero-image img { height: 350px; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+            .gallery-grid .large { grid-column: span 1; grid-row: span 1; height: 250px; }
+        }
+        @media (max-width: 900px) {
+            .nav-links { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: var(--white); padding: 20px; box-shadow: 0 10px 15px rgba(0,0,0,0.1); gap: 15px; }
+            .nav-links.active { display: flex; }
+            .hamburger { display: block; }
+        }
+        @media (max-width: 768px) {
+            .doctors-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr; }
+            .gallery-grid .large { height: 250px; }
+            .contact-form { padding: 25px; }
+        }
+        @media (max-width: 480px) {
+            .hero-text h1 { font-size: 2rem; }
+            .hero-buttons { flex-direction: column; width: 100%; }
+            .hero-buttons .btn { width: 100%; }
+            .section-header h2 { font-size: 1.8rem; }
+        }
+
+        /* Refined clinic identity */
+        :root {
+            --primary: #7043a5;
+            --primary-dark: #563080;
+            --secondary: #302344;
+            --accent: #e7d9f5;
+            --bg-light: #f7f3fb;
+            --text-dark: #292333;
+            --text-muted: #706a78;
+            --paper: #ffffff;
+            --shadow: 0 18px 50px rgba(62, 39, 86, 0.12);
+            --radius: 8px;
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+        body { background: var(--paper); font-family: "Trebuchet MS", Arial, sans-serif; }
+        section { padding: 96px 0; }
+        .navbar { padding: 12px 0; background: rgba(255, 255, 255, 0.96); }
+        .nav-container { max-width: 1240px; }
+        .logo { color: var(--secondary); letter-spacing: 0; }
+        .logo i { color: var(--primary); }
+        .nav-links { gap: 25px; }
+        .nav-links a { font-size: 0.88rem; }
+        .btn { min-height: 48px; padding: 12px 22px; border-radius: 4px; font-size: 0.9rem; }
+        .btn-primary { background: var(--primary); box-shadow: none; }
+        .btn-primary:hover { background: var(--primary-dark); box-shadow: none; }
+        .nav-links a.btn-primary { color: white; }
+        .hamburger { padding: 0; border: 0; background: transparent; }
+        :focus-visible { outline: 3px solid #9b79c5; outline-offset: 4px; }
+
+        .hero { padding: 142px 0 78px; background: var(--secondary); }
+        .hero::before {
+            content: "DHRIVYA DENTISTRY  /  KALABURAGI";
+            position: absolute;
+            top: 102px;
+            left: max(24px, calc((100% - 1200px) / 2 + 20px));
+            color: var(--accent);
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+        }
+        .hero::after { display: none; }
+        .hero-container { max-width: 1240px; gap: clamp(35px, 6vw, 84px); }
+        .hero-text h1 { max-width: 580px; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.7rem, 5.3vw, 4.8rem); font-weight: 400; line-height: 1.02; }
+        .hero-text h1 span { color: var(--accent); }
+        .hero-text p { max-width: 480px; color: #eee9f2; font-size: 1rem; line-height: 1.8; }
+        .hero-buttons .btn-primary { background: var(--accent); color: var(--secondary); }
+        .hero-buttons .btn-primary:hover { background: white; }
+        .hero-image img { height: clamp(310px, 38vw, 470px); border-radius: 4px; box-shadow: 18px 18px 0 rgba(112, 67, 165, 0.24); object-position: center 28%; }
+
+        .trust-strip { padding: 20px 24px; background: var(--accent); color: var(--secondary); }
+        .trust-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+        .trust-score { display: flex; align-items: center; gap: 12px; font-weight: 700; }
+        .trust-stars { color: #805b19; letter-spacing: 2px; }
+        .trust-note { font-size: 0.87rem; }
+        .trust-link { font-size: 0.85rem; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
+
+        .section-header { margin-bottom: 44px; }
+        .section-header h2, .why-text h2, .contact-info h2 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 3.7vw, 3rem); font-weight: 400; line-height: 1.1; }
+        .section-header p { max-width: 620px; margin: 0 auto; line-height: 1.8; }
+        .highlight { color: var(--primary); }
+        #services { background: var(--paper); }
+        .services-grid { max-width: 1240px; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 36px; }
+        .service-card { position: relative; padding: 27px 4px 28px; border: 0; border-top: 1px solid #e6ddec; border-radius: 0; text-align: left; background: transparent; }
+        .service-card:hover { transform: none; box-shadow: none; border-color: var(--primary); }
+        .service-icon { width: 42px; height: 42px; margin: 0 0 15px; border-radius: 4px; background: #f1eafa; font-size: 1.05rem; }
+        .service-card h3 { font-size: 1.05rem; }
+        .service-card p { line-height: 1.7; }
+
+        .why-us { background: #f7f3fb; }
+        .why-container { max-width: 1240px; gap: clamp(35px, 6vw, 84px); }
+        .why-image img { height: 460px; border-radius: 4px; box-shadow: 14px 14px 0 white; }
+        .why-text h2 { margin-bottom: 18px; }
+        .why-text > p { line-height: 1.8; }
+        .why-list { gap: 17px; }
+        .why-item { gap: 13px; }
+        .why-item i { color: var(--primary); }
+
+        #doctors { background: var(--paper); }
+        .doctors-grid { max-width: 980px; gap: 22px; }
+        .doctor-card { padding: 32px; border: 1px solid #e7e0eb; border-radius: 4px; box-shadow: none; text-align: left; }
+        .doctor-card h3 { font-family: Georgia, "Times New Roman", serif; font-size: 1.5rem; font-weight: 400; }
+        .doctor-card .specialty { margin-bottom: 12px; }
+        .doctor-card p { line-height: 1.75; }
+        .doctor-mark { width: 54px; height: 54px; margin-bottom: 20px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: var(--secondary); font-family: Georgia, serif; font-size: 1.2rem; }
+
+        #gallery { background: #fbf9fd !important; }
+        .gallery-grid { max-width: 1240px; gap: 12px; }
+        .gallery-grid img { height: 290px; border-radius: 4px; }
+        .gallery-grid img:hover { transform: scale(1.015); box-shadow: 0 12px 28px rgba(48, 35, 68, 0.18); }
+        .gallery-grid .large { height: 592px; }
+
+        .photo-dialog { width: fit-content; max-width: min(92vw, 1100px); max-height: 90vh; padding: 0; overflow: visible; border: 0; background: transparent; }
+        .photo-dialog::backdrop { background: rgba(23, 16, 32, 0.84); backdrop-filter: blur(4px); }
+        .photo-dialog img { display: block; max-width: 92vw; max-height: 90vh; border-radius: 4px; object-fit: contain; background: white; }
+        .photo-dialog-close { position: absolute; top: 12px; right: 12px; width: 42px; height: 42px; display: grid; place-items: center; border: 0; border-radius: 50%; background: white; color: var(--secondary); font-size: 1.15rem; cursor: pointer; }
+
+        .contact { background: var(--secondary); }
+        .contact-container { max-width: 1240px; gap: clamp(35px, 6vw, 84px); }
+        .contact-info h2 { margin-bottom: 15px; }
+        .contact-info > p { line-height: 1.8; }
+        .contact-item { gap: 13px; }
+        .contact-item i { color: var(--accent); }
+        .contact-item p { overflow-wrap: anywhere; line-height: 1.7; }
+        .contact-form { padding: 34px; border-radius: 4px; }
+        .contact-form h3 { font-family: Georgia, "Times New Roman", serif; font-size: 1.7rem; font-weight: 400; }
+        .form-group input, .form-group select, .form-group textarea { border-radius: 3px; }
+        .contact-form .btn { border-radius: 3px; }
+        .map-frame { margin-top: 22px; overflow: hidden; height: 250px; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; }
+        .map-frame iframe { width: 100%; height: 100%; display: block; border: 0; }
+        footer { background: #241a31; }
+        footer span { color: var(--accent); }
+
+        @media (max-width: 900px) {
+            .nav-links { top: calc(100% + 1px); }
+            .hero { padding-top: 130px; }
+            .hero::before { top: 91px; }
+        }
+        @media (max-width: 700px) {
+            section { padding: 72px 0; }
+            .hero { padding: 122px 0 56px; }
+            .hero::before { top: 86px; left: 20px; font-size: 0.62rem; }
+            .hero-container { gap: 30px; }
+            .hero-text h1 { font-size: clamp(2rem, 8.5vw, 2.65rem); }
+            .hero-image img { height: auto; aspect-ratio: 1.2; }
+            .trust-inner { align-items: flex-start; flex-wrap: wrap; }
+            .trust-note { width: 100%; order: 3; }
+            .services-grid { grid-template-columns: 1fr; }
+            .why-image img { height: auto; aspect-ratio: 1.25; }
+            .doctor-card { padding: 26px; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; }
+            .gallery-grid .large { grid-column: span 2; height: 300px; }
+            .gallery-grid img { height: 190px; }
+            .contact-form { padding: 26px 20px; }
+        }
+        @media (max-width: 390px) {
+            .logo { font-size: 1.15rem; }
+            .trust-link { font-size: 0.78rem; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-tooth"></i> Dhrivya Dentistry
+            </a>
+            <div class="nav-links" id="navLinks" aria-label="Main navigation">
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About Us</a>
+                <a href="#doctors">Our Doctors</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.85rem;">Book Appointment</a>
+            </div>
+            <button class="hamburger" id="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1>Dental Care,<br><span>Made Personal.</span></h1>
+                <p>Thoughtful dental care in the heart of Kalaburagi. Our team is committed to helping you feel informed, comfortable and confident at every visit.</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/919916977419?text=Hello%2C%20I%20would%20like%20to%20request%20an%20appointment%20at%20Dhrivya%20Dentistry." class="btn btn-primary" target="_blank" rel="noopener">Book on WhatsApp</a>
+                    <a href="tel:+919916977419" class="btn btn-outline"><i class="fas fa-phone-alt"></i> Call the clinic</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="Dr Parikshit Harnoor.jpg" alt="Dr Parikshit Harnoor at Dhrivya Dentistry" fetchpriority="high">
+            </div>
+        </div>
+    </section>
+
+    <div class="trust-strip" aria-label="Google rating">
+        <div class="trust-inner">
+            <div class="trust-score"><span class="trust-stars" aria-label="5 out of 5 stars">★★★★★</span><span>5.0 on Google</span></div>
+            <p class="trust-note">Rated by 148 visitors on Google</p>
+            <a class="trust-link" href="https://maps.app.goo.gl/5pEhDV7ya6vXh7s87" target="_blank" rel="noopener">Read clinic reviews <i class="fas fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+        </div>
+    </div>
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <div class="section-header">
+            <h2>Our <span class="highlight">Dental Services</span></h2>
+            <p>Explore the treatments currently offered at Dhrivya Dentistry. Our team can help you choose the right next step for your smile.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-tooth"></i></div>
+                <h3>Dental Implants</h3>
+                <p>Implant treatment options for replacing missing teeth, with a plan tailored to your needs.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-teeth"></i></div>
+                <h3>Root Canal Treatment</h3>
+                <p>Root canal care focused on treating infection and helping preserve your natural tooth.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-smile"></i></div>
+                <h3>Teeth Whitening</h3>
+                <p>Professional options to help refresh and brighten your smile.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-braces"></i></div>
+                <h3>Braces &amp; Aligners</h3>
+                <p>Orthodontic options to improve tooth alignment and your bite.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-child"></i></div>
+                <h3>Children's Dentistry</h3>
+                <p>Considerate dental visits for children, with care suited to growing smiles.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-crown"></i></div>
+                <h3>Crowns &amp; Bridges</h3>
+                <p>Restorative options to repair damaged teeth or replace missing teeth.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US (Added your new image here) -->
+    <section class="why-us" id="about">
+        <div class="why-container">
+            <div class="why-image">
+                <!-- This is the picture you asked to add -->
+                <img src="clinic1.webp" alt="Modern treatment room at Dhrivya Dentistry">
+            </div>
+            <div class="why-text">
+                <h2>Why Choose <span class="highlight">Dhrivya Dentistry?</span></h2>
+                <p style="margin-bottom: 30px; color: var(--text-muted);">Care, comfort and confidence guide every visit. Our team takes time to explain treatment options and help patients make informed decisions.</p>
+                <div class="why-list">
+                    <div class="why-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Experienced Doctors</h4>
+                            <p>Dr. Triveni Harnoor (Prosthodontist &amp; Implantologist) and Dr. Pallavi Harnoor.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Comfort-Focused Care</h4>
+                            <p>Your comfort is considered throughout your visit and treatment planning.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Modern Treatment Options</h4>
+                            <p>Ask our team about the equipment and treatment options relevant to your care.</p>
+                        </div>
+                    </div>
+                    <div class="why-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Clear Treatment Information</h4>
+                            <p>Discuss your options and expected costs directly with the clinic before treatment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOCTORS SECTION -->
+    <section id="doctors">
+        <div class="section-header">
+            <h2>Meet Our <span class="highlight">Doctors</span></h2>
+            <p>Qualified professionals dedicated to providing thoughtful dental care.</p>
+        </div>
+        <div class="doctors-grid">
+            <div class="doctor-card">
+                <div class="doctor-mark" aria-hidden="true">TH</div>
+                <h3>Dr. Triveni Harnoor</h3>
+                <p class="specialty">M.D.S. - Prosthodontist & Implantologist</p>
+                <p>Specializes in dental implants, full-mouth rehabilitation and smile design, with a focus on restoring function and aesthetics.</p>
+            </div>
+            <div class="doctor-card">
+                <div class="doctor-mark" aria-hidden="true">PH</div>
+                <h3>Dr. Pallavi Harnoor</h3>
+                <p class="specialty">B.D.S. - General Dentist</p>
+                <p>Provides general dental care with a focus on prevention and patient comfort.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION (Added your new image here as well) -->
+    <section id="gallery" style="background-color: #f8fafc;">
+        <div class="section-header">
+            <h2>Our <span class="highlight">Clinic</span></h2>
+            <p>A glimpse of the clinic and care environment in Kalaburagi.</p>
+        </div>
+        <div class="gallery-grid">
+            <img src="clinic.webp" alt="Dhrivya Dentistry Clinic" class="large">
+            <img src="clinic1.webp" alt="Dental treatment room">
+            <img src="clinic2.webp" alt="Doctor treating a patient">
+            <img src="clinic-exterior.jpg" alt="Dhrivya Dentistry sign outside Amba Complex">
+            <img src="clinic-reception.jpg" alt="Reception desk at Dhrivya Dentistry">
+            <img src="clinic-waiting-area.jpg" alt="Patient waiting area at Dhrivya Dentistry">
+        </div>
+    </section>
+
+    <dialog class="photo-dialog" id="photoDialog" aria-label="Clinic photo viewer">
+        <button class="photo-dialog-close" id="photoDialogClose" type="button" aria-label="Close photo">
+            <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+        <img id="photoDialogImage" alt="">
+    </dialog>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Book Your <span style="color: #e7d9f5;">Appointment</span></h2>
+                <p>Call or message the clinic to discuss your concern, ask about availability or request an appointment.</p>
+                
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>1st Floor, Big Bazaar, Amba Complex Road, above Patil Neuro Clinic, beside Guddambe Electronics, Jagat Circle, Kalaburagi, Karnataka 585101.</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p><a href="tel:+919916977419" style="color: inherit;">+91 99169 77419</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Hours</h4>
+                            <p>Please call or WhatsApp to confirm today's clinic hours.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Embedded Google Map -->
+                <div class="map-frame">
+                    <iframe src="https://maps.google.com/maps?q=17.3338916,76.8370856&z=17&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Dhrivya Dentistry location map"></iframe>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Request an Appointment</h3>
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="Enter your mobile number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Select a Service</label>
+                        <select id="service" required>
+                            <option value="">Choose a service</option>
+                            <option value="Dental Implants">Dental Implants</option>
+                            <option value="Root Canal Treatment">Root Canal Treatment</option>
+                            <option value="Teeth Whitening">Teeth Whitening</option>
+                            <option value="Braces & Aligners">Braces &amp; Aligners</option>
+                            <option value="Children's Dentistry">Children's Dentistry</option>
+                            <option value="General Checkup">General Checkup</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message (Optional)</label>
+                        <textarea id="message" placeholder="Any specific concern?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Continue on WhatsApp</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 <span>Dhrivya Dentistry</span>. All rights reserved. | Care • Comfort • Confidence</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        const setMenuOpen = (isOpen) => {
+            navLinks.classList.toggle('active', isOpen);
+            hamburger.setAttribute('aria-expanded', String(isOpen));
+            hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        };
+
+        hamburger.addEventListener('click', () => {
+            setMenuOpen(hamburger.getAttribute('aria-expanded') !== 'true');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                setMenuOpen(false);
+            });
+        });
+
+        const photoDialog = document.getElementById('photoDialog');
+        const photoDialogImage = document.getElementById('photoDialogImage');
+
+        document.querySelectorAll('.gallery-grid img').forEach(image => {
+            image.tabIndex = 0;
+            image.setAttribute('role', 'button');
+            image.setAttribute('aria-label', `View larger image: ${image.alt}`);
+
+            const openPhoto = () => {
+                photoDialogImage.src = image.currentSrc || image.src;
+                photoDialogImage.alt = image.alt;
+                photoDialog.showModal();
+            };
+
+            image.addEventListener('click', openPhoto);
+            image.addEventListener('keydown', event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openPhoto();
+                }
+            });
+        });
+
+        document.getElementById('photoDialogClose').addEventListener('click', () => photoDialog.close());
+        photoDialog.addEventListener('click', event => {
+            if (event.target === photoDialog) photoDialog.close();
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '10px 0';
+                navbar.style.boxShadow = '0 4px 15px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.padding = '15px 0';
+                navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+            }
+        });
+
+        // Form Submission Handler
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            const appointmentMessage = [
+                'Hello, I would like to request an appointment at Dhrivya Dentistry.',
+                `Name: ${name}`,
+                `Phone: ${phone}`,
+                `Treatment: ${service}`,
+                message ? `Message: ${message}` : ''
+            ].filter(Boolean).join('\n');
+
+            window.open(`https://wa.me/919916977419?text=${encodeURIComponent(appointmentMessage)}`, '_blank', 'noopener');
+        });
+    </script>
+</body>
+</html>
